@@ -1,0 +1,40 @@
+@use "~scss/settings" as *;
+
+.home {
+  @include page;
+
+  &_title {
+    @include page-title;
+  }
+
+  &_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    margin-top: 80px;
+
+    &_input {
+      @include input;
+    }
+
+    &_button {
+      @include button;
+    }
+    &_button-disabled {
+      @include button;
+      opacity: 0.6;
+      background-color: $color-gray-82;
+      color: $color-black;
+      border: 2px solid $color-black;
+
+      cursor: default;
+
+      &:hover {
+        background-color: $color-gray-82;
+      }
+    }
+  }
+}

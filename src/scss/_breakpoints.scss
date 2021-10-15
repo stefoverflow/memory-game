@@ -1,0 +1,10 @@
+$responsive-lg: 1280px;
+$responsive-md: 1024px;
+$responsive-sm: 768px;
+$responsive-xs: 568px;
+
+@mixin mobile-screen() {
+  @media (max-width: $responsive-xs) {
+    @content;
+  }
+}

@@ -1,0 +1,43 @@
+@use "~scss/settings" as *;
+@import "https://fonts.googleapis.com/css?family=Lily+Script+One";
+
+.card {
+  position: relative;
+  width: 100px;
+  height: 200px;
+
+  &_container {
+    &_front,
+    &_back {
+      @include card;
+      width: 100px;
+      height: 200px;
+      overflow: hidden;
+      backface-visibility: hidden;
+      position: absolute;
+      transition: transform 0.5s linear;
+    }
+    &_front {
+      transform: perspective(600px) rotateY(0deg);
+    }
+    &_back {
+      background: $color-white;
+      transform: perspective(600px) rotateY(-180deg);
+    }
+    &_back.matched {
+      opacity: 0.8;
+      background-color: $color-violet-light;
+    }
+  }
+
+  &_container.fliped > &_container_front {
+    transform: perspective(600px) rotateY(180deg);
+  }
+  &_container.fliped > &_container_back {
+    transform: perspective(600px) rotateY(0deg);
+  }
+}
+
+// .matched {
+//   opacity: 0.5;
+// }

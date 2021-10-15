@@ -1,0 +1,51 @@
+@use "~scss/settings" as *;
+
+.game {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  @include mobile-screen {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &_winner-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    color: $color-black;
+    background-color: $color-yellow;
+
+    border-radius: $border-radius;
+    border: 4px solid $color-black;
+
+    margin: 20px;
+    padding: 40px;
+
+    &_title {
+      @include page-title;
+    }
+
+    &_description {
+      @include page_description;
+    }
+
+    &_scores {
+      @include button;
+    }
+  }
+}

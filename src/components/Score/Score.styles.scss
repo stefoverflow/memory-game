@@ -1,0 +1,30 @@
+@use "~scss/settings" as *;
+
+.score {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 300px;
+
+  border-bottom: 2px solid $color-black;
+
+  padding: 8px 0;
+
+  @include mobile-screen {
+    max-width: 200px;
+  }
+
+  &_username {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 240px;
+  }
+
+  &_score {
+    width: 60px;
+    text-align: center;
+  }
+}
